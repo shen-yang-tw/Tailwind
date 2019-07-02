@@ -7,7 +7,7 @@ module.exports = {
       'xl': '1600px',
     }
   },
-  important: true,
+  // important: true,
   variants: {},
   plugins: []
 }

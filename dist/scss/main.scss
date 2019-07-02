@@ -82,28 +82,7 @@ a {
 #{$text-color-black} {color:black;}
 #{$text-color-dark} {color:$color-text-dark;}
 #{$text-color-grey} {color:$color-text-grey;}
-#{$text-color-primary} {color:$color-primary-dark;}
-#{$text-color-secondary} {color:$color-secondary-dark;}
-#{$bg-primary} {
-  @include bg-color($bg-color:$color-primary);
-}
-#{$btn-primary} {
-  @extend #{$bg-primary};
-  &#{$active}, &:hover {
-    background-color:$color-primary-hover;
-    color:text-color($color-primary-hover);
-  }
-}
-#{$bg-secondary} {
-  @include bg-color($bg-color:$color-secondary);
-}
-#{$btn-secondary} {
-  @extend #{$bg-secondary};
-  &#{$active}, &:hover {
-    background-color:$color-secondary-hover;
-    color:text-color($color-secondary-hover);
-  }
-}
+
 /*** Brand ***/
 $brand-text:$text-color-facebook $facebook, $text-color-twitter $twitter, $text-color-googleplus $googleplus, $text-color-linkedin $linkedin, $text-color-line $line;
 @each $name, $color in $brand-text {
@@ -136,7 +115,7 @@ $brand-bg:$bg-facebook $facebook, $bg-twitter $twitter, $bg-googleplus $googlepl
 
 /*---------- uk-grid-divider ------------------------------*/
 #{$divider-dashed} {
-  &#{$uk-grid-divider}, &#{$uk-grid-divider-stack} {@include bordered($style:dashed)}
+  &#{$uk-grid-divider}>:not(.uk-first-column)::before, &#{$uk-grid-divider}#{$uk-grid-stack}>#{$uk-grid-margin}::before {@include bordered($style:dashed)}
 }
 #{$divider-child}>:not(:last-child) {@include bordered($property:border-right)}
 
@@ -406,7 +385,6 @@ $brand-bg:$bg-facebook $facebook, $bg-twitter $twitter, $bg-googleplus $googlepl
   padding: 0 !important;
   &>#{$uk-card} {padding: $space-l;}
   &>#{$uk-card}, &#{$mc-card}> {border: none; border-radius: 0; box-shadow: none;}
-  /*uk-@m*/
   @media (min-width:960px) {
     padding: 15px !important;
     &>#{$uk-card} {padding: 30px; @include uk-box-shadow}
@@ -436,14 +414,14 @@ $brand-bg:$bg-facebook $facebook, $bg-twitter $twitter, $bg-googleplus $googlepl
   &>* {@include space($property:padding-left, $size:$space)}
 }
 
-.uk-navbar-toggle-icon {min-width: 50px;}
-.uk-breadcrumb a:focus, .uk-breadcrumb a:hover {color: black; text-decoration: underline;}
+#{$uk-navbar-toggle-icon} {min-width: 50px;}
+#{$uk-breadcrumb} a:focus, #{$uk-breadcrumb} a:hover {color: black; text-decoration: underline;}
 #{$text-color-black} {
-  &#{$uk-breadcrumb-pseudo}, &.uk-breadcrumb>li>span {color: black;}
-  &#{$uk-breadcrumb-pseudo}, &.uk-breadcrumb>li>span {color: $color-text-dark;}
+  &#{$uk-breadcrumb-pseudo}, &#{$uk-breadcrumb}>li>span {color: black;}
+  &#{$uk-breadcrumb-pseudo}, &#{$uk-breadcrumb}>li>span {color: $color-text-dark;}
 }
 
-.uk-navbar-nav {
+#{$uk-navbar-nav} {
   &>li#{$bg-black} {display: flex; align-items: center;}
   &>li>span {font-size: $fontsize-s;}
   &>li>a, .uk-navbar-item, .uk-navbar-toggle {height: inherit; padding: 0 $space;}
@@ -456,7 +434,7 @@ $brand-bg:$bg-facebook $facebook, $bg-twitter $twitter, $bg-googleplus $googlepl
   &>* {line-height: 1; padding: $space;}
 }
 
-.uk-tab {
+#{$uk-tab} {
   &>li>a:hover {border-color: #1e87f0;}
   &.border-b-0:before {border-bottom: none;}
   &.border-gray-600>#{$uk-active}>a, &.border-gray-600>li>a:hover {border-color:#718096;}
@@ -515,73 +493,73 @@ $brand-bg:$bg-facebook $facebook, $bg-twitter $twitter, $bg-googleplus $googlepl
 #{$uk-pagination}#{$pagination-bg}>#{$uk-disabled}>*, #{$uk-pagination}#{$pagination}>#{$disabled}>*, #{$pagination}>#{$disabled}>* {background-color: #fdfdfd; color: #c5c5c5; border: 1px solid rgba(0, 0, 0, 0.06);}
 #{$uk-pagination}#{$pagination-bg}>li:not(#{$uk-active}):not(#{$uk-disabled})>span {border: none;}
 
-#{$uk-disabled}[class*=button] {background: lightgray !important;}
+#{$uk-disabled}#{$button} {background: $color-light !important;}
 
-.accordion_iconL.uk-accordion-title::before {float: none; display: inline-block; vertical-align: bottom; margin-bottom: 2px; margin-right: 5px;}
-.accordion_iconR.uk-accordion-title::before {float: none;}
-.accordion_iconR.uk-accordion-title::after {content: ""; display: inline-block; vertical-align: bottom; width: 1.4em; height: 1.4em; margin-left: 5px; margin-bottom: 2px; background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMyIgdmlld0JveD0iMCAwIDEzIDEzIj4KICAgIDxyZWN0IGZpbGw9IiM2NjYiIHdpZHRoPSIxMyIgaGVpZ2h0PSIxIiB4PSIwIiB5PSI2Ij48L3JlY3Q+CiAgICA8cmVjdCBmaWxsPSIjNjY2IiB3aWR0aD0iMSIgaGVpZ2h0PSIxMyIgeD0iNiIgeT0iMCI+PC9yZWN0Pgo8L3N2Zz4="); background-repeat: no-repeat; background-position: 50% 50%;}
-.uk-open>.accordion_iconR.uk-accordion-title::after {background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMyIgdmlld0JveD0iMCAwIDEzIDEzIj4KICAgIDxyZWN0IGZpbGw9IiM2NjYiIHdpZHRoPSIxMyIgaGVpZ2h0PSIxIiB4PSIwIiB5PSI2Ij48L3JlY3Q+Cjwvc3ZnPg=="); background-repeat: no-repeat; background-position: 50% 50%;}
-.accordion_iconR_arrow.uk-accordion-title::after {background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBkYXRhLXN2Zz0iY2hldnJvbi1yaWdodCI+PHBvbHlsaW5lIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLXdpZHRoPSIxLjAzIiBwb2ludHM9IjcgNCAxMyAxMCA3IDE2Ij48L3BvbHlsaW5lPjwvc3ZnPg=="); margin-bottom: -1px;}
-.uk-open>.accordion_iconR_arrow.uk-accordion-title::after {background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBkYXRhLXN2Zz0iY2hldnJvbi1kb3duIj48cG9seWxpbmUgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjEuMDMiIHBvaW50cz0iMTYgNyAxMCAxMyA0IDciPjwvcG9seWxpbmU+PC9zdmc+");}
+#{$accordion-icon-l}#{$uk-accordion-title}::before {float: none; display: inline-block; vertical-align: bottom; margin-bottom: 2px; margin-right: 5px;}
+#{$accordion-icon-r}#{$uk-accordion-title}::before {float: none;}
+#{$accordion-icon-r}#{$uk-accordion-title}::after {content: ""; display: inline-block; vertical-align: bottom; width: 1.4em; height: 1.4em; margin-left: 5px; margin-bottom: 2px; background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMyIgdmlld0JveD0iMCAwIDEzIDEzIj4KICAgIDxyZWN0IGZpbGw9IiM2NjYiIHdpZHRoPSIxMyIgaGVpZ2h0PSIxIiB4PSIwIiB5PSI2Ij48L3JlY3Q+CiAgICA8cmVjdCBmaWxsPSIjNjY2IiB3aWR0aD0iMSIgaGVpZ2h0PSIxMyIgeD0iNiIgeT0iMCI+PC9yZWN0Pgo8L3N2Zz4="); background-repeat: no-repeat; background-position: 50% 50%;}
+#{$uk-open}>#{$accordion-icon-r}#{$uk-accordion-title}::after {background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMyIgdmlld0JveD0iMCAwIDEzIDEzIj4KICAgIDxyZWN0IGZpbGw9IiM2NjYiIHdpZHRoPSIxMyIgaGVpZ2h0PSIxIiB4PSIwIiB5PSI2Ij48L3JlY3Q+Cjwvc3ZnPg=="); background-repeat: no-repeat; background-position: 50% 50%;}
+#{$accordion-icon-r-arrow}#{$uk-accordion-title}::after {background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBkYXRhLXN2Zz0iY2hldnJvbi1yaWdodCI+PHBvbHlsaW5lIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLXdpZHRoPSIxLjAzIiBwb2ludHM9IjcgNCAxMyAxMCA3IDE2Ij48L3BvbHlsaW5lPjwvc3ZnPg=="); margin-bottom: -1px;}
+#{$uk-open}>#{$accordion-icon-r-arrow}#{$uk-accordion-title}::after {background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBkYXRhLXN2Zz0iY2hldnJvbi1kb3duIj48cG9seWxpbmUgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjEuMDMiIHBvaW50cz0iMTYgNyAxMCAxMyA0IDciPjwvcG9seWxpbmU+PC9zdmc+");}
 
-.uk-table th {color: #666;}
+#{$uk-table} th {color: #666;}
 @media (max-width: 1119px) {
-.uk-table-responsive.table_responsive_l thead {display: none;}
-.uk-table-responsive.table_responsive_l .uk-table-link:not(:last-child)>a, .uk-table-responsive.table_responsive_l td:not(:last-child):not(.uk-table-link), .uk-table-responsive.table_responsive_l th:not(:last-child):not(.uk-table-link) {padding-bottom: 5px!important;}
-.uk-table-responsive.table_responsive_l td, .uk-table-responsive.table_responsive_l th {width: auto!important; max-width: none!important; min-width: 0!important; overflow: visible!important; white-space: normal!important;}
-.uk-table-responsive.table_responsive_l, .uk-table-responsive.table_responsive_l tbody, .uk-table-responsive.table_responsive_l td, .uk-table-responsive.table_responsive_l th, .uk-table-responsive.table_responsive_l tr { display: block;}
+#{$uk-table-responsive}#{$table-responsive}\@l thead {display: none;}
+#{$uk-table-responsive}#{$table-responsive}\@l #{$uk-table-link}:not(:last-child)>a, #{$uk-table-responsive}#{$table-responsive}\@l td:not(:last-child):not(#{$uk-table-link}), #{$uk-table-responsive}#{$table-responsive}\@l th:not(:last-child):not(#{$uk-table-link}) {padding-bottom: 5px!important;}
+#{$uk-table-responsive}#{$table-responsive}\@l td, #{$uk-table-responsive}#{$table-responsive}\@l th {width: auto!important; max-width: none!important; min-width: 0!important; overflow: visible!important; white-space: normal!important;}
+#{$uk-table-responsive}#{$table-responsive}\@l, #{$uk-table-responsive}#{$table-responsive}\@l tbody, #{$uk-table-responsive}#{$table-responsive}\@l td, #{$uk-table-responsive}#{$table-responsive}\@l th, #{$uk-table-responsive}#{$table-responsive}\@l tr {display: block;}
 }
 @media (max-width: 1599px) {
-.uk-table-responsive.table_responsive_xl thead {display: none;}
-.uk-table-responsive.table_responsive_xl .uk-table-link:not(:last-child)>a, .uk-table-responsive.table_responsive_xl td:not(:last-child):not(.uk-table-link), .uk-table-responsive.table_responsive_xl th:not(:last-child):not(.uk-table-link) {padding-bottom: 5px!important;}
-.uk-table-responsive.table_responsive_xl td, .uk-table-responsive.table_responsive_xl th {width: auto!important; max-width: none!important; min-width: 0!important; overflow: visible!important; white-space: normal!important;}
-.uk-table-responsive.table_responsive_xl, .uk-table-responsive.table_responsive_xl tbody, .uk-table-responsive.table_responsive_xl td, .uk-table-responsive.table_responsive_xl th, .uk-table-responsive.table_responsive_xl tr { display: block;}
+#{$uk-table-responsive}#{$table-responsive}\@xl thead {display: none;}
+#{$uk-table-responsive}#{$table-responsive}\@xl #{$uk-table-link}:not(:last-child)>a, #{$uk-table-responsive}#{$table-responsive}\@xl td:not(:last-child):not(#{$uk-table-link}), #{$uk-table-responsive}#{$table-responsive}\@xl th:not(:last-child):not(#{$uk-table-link}) {padding-bottom: 5px!important;}
+#{$uk-table-responsive}#{$table-responsive}\@xl td, #{$uk-table-responsive}#{$table-responsive}\@xl th {width: auto!important; max-width: none!important; min-width: 0!important; overflow: visible!important; white-space: normal!important;}
+#{$uk-table-responsive}#{$table-responsive}\@xl, #{$uk-table-responsive}#{$table-responsive}\@xl tbody, #{$uk-table-responsive}#{$table-responsive}\@xl td, #{$uk-table-responsive}#{$table-responsive}\@xl th, #{$uk-table-responsive}#{$table-responsive}\@xl tr { display: block;}
 }
 
-.uk-checkbox.form_white, .uk-radio.form_white {background-color: white;}
-.uk-checkbox.form_white:checked, .uk-checkbox.form_white:indeterminate, .uk-radio.form_white:checked {background-color: #1e87f0;}
-.uk-input:disabled, .uk-select:disabled, .uk-textarea:disabled {background-color: #fcfcfc;}
+#{$uk-checkbox}#{$form-white}, #{$uk-radio}#{$form-white} {background-color: white;}
+#{$uk-checkbox}#{$form-white}:checked, #{$uk-checkbox}#{$form-white}:indeterminate, #{$uk-radio}#{$form-white}:checked {background-color: #1e87f0;}
+#{$uk-input}:disabled, #{$uk-select}:disabled, #{$uk-textarea}:disabled {background-color: #fcfcfc;}
 
-.uk-button {padding: 0 10px;}
+#{$uk-button} {padding: 0 10px;}
 [class*=uk-button].btn-secondary {color: #fff; background-color: #6c757d;}
 [class*=uk-button].btn-secondary:hover {color: #fff; background-color: #5a6268;}
 [class*=uk-button].btn-light {color: #212529; background-color: #f8f9fa;}
 [class*=uk-button].btn-light:hover {color: #212529; background-color: #e2e6ea;}
 
-.uk-list.list_collapse>li:nth-child(n+2), .uk-list.list_collapse>li>ul {margin-top: 0;}
-.uk-list.list_small>li:nth-child(n+2), .uk-list.list_small>li>ul {margin-top: 5px;}
-.uk-list-bullet>li {padding-left: 1.5em;}
-.uk-list-bullet.uk-light>li::before {background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc2JyBoZWlnaHQ9JzYnIHZpZXdCb3g9JzAgMCA2IDYnPjxjaXJjbGUgZmlsbD0nI2ZmZicgY3g9JzMnIGN5PSczJyByPSczJy8+PC9zdmc+');}
+#{$uk-list}#{$list-collapse}>li:nth-child(n+2), #{$uk-list}#{$list-collapse}>li>ul {margin-top: 0;}
+#{$uk-list}#{$list-small}>li:nth-child(n+2), #{$uk-list}#{$list-small}>li>ul {margin-top: 5px;}
+#{$uk-list-bullet}>li {padding-left: 1.5em;}
+#{$uk-list-bullet}#{$uk-light}>li::before {background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc2JyBoZWlnaHQ9JzYnIHZpZXdCb3g9JzAgMCA2IDYnPjxjaXJjbGUgZmlsbD0nI2ZmZicgY3g9JzMnIGN5PSczJyByPSczJy8+PC9zdmc+');}
 
-.uk-grid-divider.grid_divider_stack_remove.uk-grid-stack>.uk-grid-margin::before {border: none;}
+#{$uk-grid-divider}#{$grid-divider-stack-remove}#{$uk-grid-stack}>#{$uk-grid-margin}::before {border: none;}
 
-.containerExpand.uk-container {padding: 0;}
+#{$container-expand}#{$uk-container} {padding: 0;}
 
-.uk-alert.badge {margin-top:0; margin-bottom: 5px; padding: 7px 29px 7px 10px;}
-.uk-alert.badge .uk-alert-close {top: calc(14px / 2); right: 7px; opacity: .7;}
-.uk-alert.badge-secondary {color: #fff; background-color: #6c757d;}
+#{$uk-alert}.badge {margin-top:0; margin-bottom: 5px; padding: 7px 29px 7px 10px;}
+#{$uk-alert}.badge #{$uk-alert}-close {top: calc(14px / 2); right: 7px; opacity: .7;}
+#{$uk-alert}.badge-secondary {color: #fff; background-color: #6c757d;}
 
-.uk-modal.uk-flex-top.uk-open {display: flex !important;}
+#{$uk-modal}#{$uk-flex-top}#{$uk-open} {display: flex !important;}
 
-.uk-form-custom {width: 50%; min-height: 27px;}
-.uk-form-custom input[type=file]::before {content: ""; display: block; position: absolute; top: 0; bottom: 0; left: 0; right: 0; background: white;}
-.uk-form-custom input[type=file]:focus {opacity: 1;}
-.uk-form-custom input[type=file]:focus+.uk-link {z-index: 1; position: absolute; width: 100%; left: 0;}
-.uk-form-small:not(textarea):not([multiple]):not([size]) {padding-right: 25px;}
+#{$uk-form-custom} {width: 50%; min-height: 27px;}
+#{$uk-form-custom} input[type=file]::before {content: ""; display: block; position: absolute; top: 0; bottom: 0; left: 0; right: 0; background: white;}
+#{$uk-form-custom} input[type=file]:focus {opacity: 1;}
+#{$uk-form-custom} input[type=file]:focus+.uk-link {z-index: 1; position: absolute; width: 100%; left: 0;}
+#{$uk-form-small}:not(textarea):not([multiple]):not([size]) {padding-right: 25px;}
 
 @media (min-width:640px) {
-.uk-width-auto\@s {flex: inherit;}
-.containerExpand.uk-container {padding: 0 30px;}
+#{$uk-width-auto}\@s {flex: inherit;}
+#{$container-expand}#{$uk-container} {padding: 0 30px;}
 }
 @media (min-width:960px) {
-.uk-width-auto\@m {flex: inherit;}
-.containerExpand.uk-container {padding: 0 40px;}
+#{$uk-width-auto}\@m {flex: inherit;}
+#{$container-expand}#{$uk-container} {padding: 0 40px;}
 }
 @media (min-width:1200px) {
-.uk-width-auto\@l {flex: inherit;}
+#{$uk-width-auto}\@l {flex: inherit;}
 }
 @media (min-width:1600px) {
-.uk-width-auto\@xl {flex: inherit;}
+#{$uk-width-auto}\@xl {flex: inherit;}
 }
 /*---------- End Uikit 3 Style
 ---------------------------------------------------------------------------------- */
@@ -604,8 +582,8 @@ $brand-bg:$bg-facebook $facebook, $bg-twitter $twitter, $bg-googleplus $googlepl
 
 /*---------- IE10+ ------------------------------*/
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-.uk-grid>th[class*=uk-width-], .uk-grid>td[class*=uk-width-] {display: block;}
-.uk-table-responsive .uk-grid>td.uk-width-1-1 {flex-basis: 100%;}
-.uk-dropdown-nav li>* {display: block !important;}
+#{$uk-grid}>th[class*=uk-width-], #{$uk-grid}>td[class*=uk-width-] {display: block;}
+#{$uk-table-responsive} #{$uk-grid}>td#{$uk-width-1-1} {flex-basis: 100%;}
+#{$uk-dropdown-nav} li>* {display: block !important;}
 #{$height-ie} {height: 100%;}
 }

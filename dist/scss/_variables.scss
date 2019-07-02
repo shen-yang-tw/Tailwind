@@ -6,6 +6,8 @@
 
 //mc: materializecss
 
+@import 'color-variables';
+
 //### Media ###------------------------------------------------//
 $small:640px !default; //s
 $medium:960px !default; //m
@@ -104,7 +106,15 @@ $text-color-primary:".color_primary" !default;
 $text-color-secondary:".color_secondary" !default;
 $bg-black:".bg_black" !default;
 $bg-primary:".bg_primary" !default;
+$bg-primary-light:".bg_primary-light" !default;
+$bg-primary-lighter:".bg_primary-lighter" !default;
+$bg-primary-dark:".bg_primary-dark" !default;
+$bg-primary-darker:".bg_primary-darker" !default;
 $bg-secondary:".bg_secondary" !default;
+$bg-secondary-light:".bg_secondary-light" !default;
+$bg-secondary-lighter:".bg_secondary-lighter" !default;
+$bg-secondary-dark:".bg_secondary-dark" !default;
+$bg-secondary-darker:".bg_secondary-darker" !default;
 $bg-white-opacity:".bg_white_opacity-" !default;
 $bg-black-opacity:".bg_black_opacity-" !default;
 $text-color-facebook:".color_facebook" !default;
@@ -123,7 +133,15 @@ $divider-dashed:".divider_dashed" !default;
 $divider-child:".divider_child" !default;
 $opacity-name:".opacity-" !default;
 $btn-primary:".btn_primary" !default;
+$btn-primary-light:".btn_primary-light" !default;
+$btn-primary-lighter:".btn_primary-lighter" !default;
+$btn-primary-dark:".btn_primary-dark" !default;
+$btn-primary-darker:".btn_primary-darker" !default;
 $btn-secondary:".btn_secondary" !default;
+$btn-secondary-light:".btn_secondary-light" !default;
+$btn-secondary-lighter:".btn_secondary-lighter" !default;
+$btn-secondary-dark:".btn_secondary-dark" !default;
+$btn-secondary-darker:".btn_secondary-darker" !default;
 $active:".active" !default;
 $disabled:".disabled" !default;
 $inline-block:a, span, label, strong, small !default;
@@ -131,26 +149,28 @@ $empty:".empty";
 $none:"img[src='']", "#{$empty}:empty:only-child" !default;
 $margin-child:".margin_child" !default;
 $margin-x-child:".margin_x_child" !default;
-$margin-x-child-m:".margin_x_child_m" !default;
-$margin-x-child-l:".margin_x_child_l" !default;
+$margin-x-child-m:".margin_x_child-m" !default;
+$margin-x-child-l:".margin_x_child-l" !default;
 $margin-y-child:".margin_y_child" !default;
-$margin-y-child-m:".margin_y_child_m" !default;
-$margin-y-child-l:".margin_y_child_l" !default;
-$margin-y-child-even:".margin_y_child_even" !default;
-$margin-y-child-even-m:".margin_y_child_even_m" !default;
-$margin-y-child-even-l:".margin_y_child_even_l" !default;
+$margin-y-child-m:".margin_y_child-m" !default;
+$margin-y-child-l:".margin_y_child-l" !default;
+$margin-y-child-even:".margin_y_child-even" !default;
+$margin-y-child-even-m:".margin_y_child_even-m" !default;
+$margin-y-child-even-l:".margin_y_child_even-l" !default;
 $list-striped:".list_striped" !default;
 $list-horizontal:".list_horizontal" !default;
 $list-decimal:".list_decimal" !default;
 $list-decimal-ch:".list_decimal_ch" !default;
 $list-decimal-row:".list_decimal_row" !default;
 $list-badge:".list_badge" !default;
-$list-badge-r:".list_badge_r" !default;
-$list-badge-divder:".list_badge_divder" !default;
-$list-badge-margin-s:".list_badge_margin_s" !default;
+$list-badge-r:".list_badge-r" !default;
+$list-badge-divder:".list_badge-divder" !default;
+$list-badge-margin-s:".list_badge_margin-s" !default;
 $list-dot:".list_dot" !default;
 $list-vline:".list_vline" !default;
 $list-btmline:".list_btmline" !default;
+$list-collapse:".list_collapse" !default;
+$list-small:".list_small" !default;
 $hanging-indent:".hanging_indent" !default;
 $reset-indent:".reset_indent" !default;
 $width:".w-" !default;
@@ -186,38 +206,73 @@ $checkbox:".checkbox" !default;
 $checkbox-circle:".checkbox_circle" !default;
 $grid-xsmall:".grid_xs" !default;
 $grid-xxsmall:".grid_xxs" !default;
+$grid-divider-stack-remove:".grid_divider_stack_remove" !default;
 $container-responsive:".container_responsive" !default;
+$container-expand:".container_expand" !default;
 $pagination-padding-s:".pagination_padding_s" !default;
 $pagination-bg:".pagination_bg" !default;
 $pagination-link:".pagination_link" !default;
 $pagination:".pagination" !default;
+$button:".btn" !default;
+$accordion-icon-l:".accordion_icon-l" !default;
+$accordion-icon-r:".accordion_icon-r" !default;
+$accordion-icon-r-arrow:".accordion_icon-r-arrow" !default;
+$table-responsive:".table_responsive" !default;
+$form-white:".form_white" !default;
 
 $mc-card:".card" !default;
 $mc-card-content:".card-content" !default;
 
 $uk:"[class*=uk-]" !default;
+$uk-breadcrumb:".uk-breadcrumb" !default;
 $uk-breadcrumb-pseudo:".uk-breadcrumb>:nth-child(n+2):not(.uk-first-column)::before" !default;
+$uk-tab:".uk-tab" !default;
 $uk-tab-pseudo:".uk-tab::before" !default;
 $uk-list-striped:".uk-list-striped" !default;
 $uk-alert:".uk-alert" !default;
-$uk-grid-divider:".uk-grid-divider>:not(.uk-first-column)::before" !default;
-$uk-grid-divider-stack:".uk-grid-divider.uk-grid-stack>.uk-grid-margin::before" !default;
+$uk-grid:".uk-grid" !default;
+$uk-grid-divider:".uk-grid-divider" !default;
+$uk-grid-stack:".uk-grid-stack" !default;
+$uk-grid-margin:".uk-grid-margin" !default;
 $uk-width:"[class*='uk-width']" !default;
-$uk-card:"[class*='uk-card']" !default;
-$uk-card-small:"[class*='uk-card-small']" !default;
-$uk-card-large:"[class*='uk-card-large']" !default;
+$uk-card:".uk-card" !default;
+$uk-card-small:".uk-card-small" !default;
+$uk-card-large:".uk-card-large" !default;
 $uk-subnav:".uk-subnav" !default;
 $uk-nav:".uk-nav" !default;
 $uk-nav-header:".uk-nav-header" !default;
+$uk-navbar-nav:".uk-navbar-nav" !default;
+$uk-navbar-toggle-icon:".uk-navbar-toggle-icon" !default;
 $uk-slideshow:".uk-slideshow" !default;
 $uk-light:".uk-light" !default;
 $uk-slidenav:".uk-slidenav" !default;
+$uk-modal:".uk-modal" !default;
 $uk-modal-dialog-lightbox:".uk-modal-dialog-lightbox" !default;
 $uk-lightbox-content:".uk-lightbox-content" !default;
 $uk-dotnav:".uk-dotnav" !default;
 $uk-active:".uk-active" !default;
 $uk-disabled:".uk-disabled" !default;
 $uk-pagination:".uk-pagination" !default;
+$uk-accordion-title:".uk-accordion-title" !default;
+$uk-table:".uk-table" !default;
+$uk-table-responsive:".uk-table-responsive" !default;
+$uk-table-link:".uk-table-link" !default;
+$uk-checkbox:".uk-checkbox" !default;
+$uk-radio:".uk-radio" !default;
+$uk-input:".uk-input" !default;
+$uk-select:".uk-select" !default;
+$uk-textarea:".uk-textarea" !default;
+$uk-button:".uk-button" !default;
+$uk-list:".uk-list" !default;
+$uk-list-bullet:".uk-list-bullet" !default;
+$uk-container:".uk-container" !default;
+$uk-flex-top:".uk-flex-top" !default;
+$uk-open:".uk-open" !default;
+$uk-form-custom:".uk-form-custom" !default;
+$uk-form-small:".uk-form-small" !default;
+$uk-width-1-1:".uk-width-1-1" !default;
+$uk-width-auto:".uk-width-auto" !default;
+$uk-dropdown-nav:".uk-dropdown-nav" !default;
 
 $height-ie:".height_ie" !default;
 
@@ -259,18 +314,6 @@ $color-link:$color-text-dark !default;
 $color-link-hover:black !default;
 $color-border:rgba(black,.12) !default;
 $color-border-focus:rgba(#4299e1, 0.5) !default;
-$color-primary:#4FD1C5 !default;
-$color-primary-light:lighten($color-primary, 10%) !default;
-$color-primary-lighter:lighten($color-primary, 20%) !default;
-$color-primary-dark:darken($color-primary, 10%) !default;
-$color-primary-darker:darken($color-primary, 20%) !default;
-$color-primary-hover:darken($color-primary, 5%) !default;
-$color-secondary:#63B3ED !default;
-$color-secondary-light:lighten($color-secondary, 10%) !default;
-$color-secondary-lighter:lighten($color-secondary, 20%) !default;
-$color-secondary-dark:darken($color-secondary, 10%) !default;
-$color-secondary-darker:darken($color-secondary, 20%) !default;
-$color-secondary-hover:darken($color-secondary, 5%) !default;
 $color-blue-grey:#607d8b !default;
 $color-blue-grey-light:lighten($color-blue-grey, 20%) !default;
 $color-blue-grey-dark:darken($color-blue-grey, 20%) !default;
@@ -304,6 +347,68 @@ $line:#00b900 !default;
     opacity:$val !important;
   } @else {
     opacity:$val;
+  }
+}
+
+@mixin button($pill:$boolean, $outline:$boolean, $three-d:$boolean, $groups:$boolean, $s:$boolean, $l:$boolean, $border-color:$color-primary, $bg:$color-primary, $important:$boolean) {
+  display: inline-block;
+  box-sizing: border-box;
+  overflow: visible;
+  @if $important {
+    text-transform: none !important;
+    @if $pill {
+      border-radius: 9999px !important;
+    }
+    @if $outline {
+      border-width: $space-1px !important;
+      border-color: $border-color !important;
+      background-color: transparent !important;
+      color:darken($border-color, 20%) !important;
+      &#{$active}, &:hover {background-color:$border-color !important; color:text-color($border-color) !important;}
+    } @else {
+      background-color:$bg !important;
+      color:text-color($bg) !important;
+      &#{$active}, &:hover {background-color:darken($bg, 10%); color:text-color(darken($bg, 10%)) !important;}
+    }
+    @if $three-d {
+      border-bottom-width: calc(4rem/#{$strip-unit($font-base)}) !important;
+      border-color: darken($border-color, 10%) !important;
+    }
+    &:disabled {
+      opacity: .5 !important;
+      cursor: not-allowed !important;
+    }
+  } @else {
+    text-transform: none;
+    @if $s {
+      padding: $space-s $space;
+    } @else if $l {
+      padding: $space-m $space-l;
+    } @else {
+      padding: $space $space-m;
+    }
+    @if $pill {
+      border-radius: 9999px;
+    }
+    @if $outline {
+      border-width: $space-1px;
+      border-color: $border-color;
+      background-color: transparent;
+      color:darken($border-color, 20%);
+      &#{$active}, &:hover {background-color:$border-color; color:text-color($border-color);}
+    } @else {
+      background-color:$bg;
+      color:text-color($bg);
+      &#{$active}, &:hover {background-color:darken($bg, 10%); color:text-color(darken($bg, 10%));}
+    }
+    @if $three-d {
+      border-bottom-width: calc(4rem/#{$strip-unit($font-base)});
+      border-color: darken($border-color, 20%);
+    }
+  }
+  &:disabled {
+    opacity: .5;
+    cursor: not-allowed;
   }
 }
 

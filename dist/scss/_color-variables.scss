@@ -1,0 +1,12 @@
+$color-primary:#4FD1C5 !default;
+$color-primary-light:lighten($color-primary, 20%) !default;
+$color-primary-lighter:lighten($color-primary, 40%) !default;
+$color-primary-dark:darken($color-primary, 20%) !default;
+$color-primary-darker:darken($color-primary, 40%) !default;
+$color-primary-hover:darken($color-primary, 10%) !default;
+$color-secondary:#63B3ED !default;
+$color-secondary-light:lighten($color-secondary, 20%) !default;
+$color-secondary-lighter:lighten($color-secondary, 40%) !default;
+$color-secondary-dark:darken($color-secondary, 20%) !default;
+$color-secondary-darker:darken($color-secondary, 40%) !default;
+$color-secondary-hover:darken($color-secondary, 10%) !default;

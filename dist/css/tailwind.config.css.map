@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["../scss/_variables.scss"],"names":[],"mappings":"AAuBU","file":"tailwind.config.css"}
+{"version":3,"sourceRoot":"","sources":["../scss/_variables.scss","../scss/tailwind.config.scss"],"names":[],"mappings":"AAuBU;ACrBV;AACA;AAGA;EACE;;;AAEF;EACE;;;AAGF;EACE;;;AAEF;EACE;;;AAGF","file":"tailwind.config.css"}

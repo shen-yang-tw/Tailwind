@@ -35,11 +35,11 @@ Refer to https://docs.npmjs.com/files/package.json for guidance
 
    ```npm run dev:css```
 
-* Create purged and minified css / PurgeCSS - Remove unused css (Added by Sheeny Yang-2019-6-3)
+* Create purged and minified css / PurgeCSS - Remove "unused" css (Added by Sheeny Yang-2019-6-3)
 
    ```npm run build:css```
 
-* Minify CSS / Cssnano - Remove unused css (Added by Sheeny Yang-2019-6-3)
+* Minify CSS / Cssnano - Remove "unused" css (Added by Sheeny Yang-2019-6-3)
    1.install:
 
    ```npm install cssnano --save-dev```

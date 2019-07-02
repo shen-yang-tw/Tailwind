@@ -1,0 +1,110 @@
+@import url("http://fonts.googleapis.com/css?family=Noto+Sans+TC:100,300,400,500,700,900|Noto+Serif+TC|Poppins|Material+Icons&display=swap&subset=chinese-traditional");
+.color_primary {
+  color: #279389;
+}
+
+.color_secondary {
+  color: #1884d2;
+}
+
+.bg_primary, .btn_primary {
+  background-color: #4FD1C5;
+  color: black;
+}
+
+.bg_primary-light, .btn_primary-light {
+  background-color: #a0e6e0;
+  color: black;
+}
+
+.bg_primary-lighter, .btn_primary-lighter {
+  background-color: #f1fbfa;
+  color: black;
+}
+
+.bg_primary-dark, .btn_primary-dark {
+  background-color: #279389;
+  color: black;
+}
+
+.bg_primary-darker, .btn_primary-darker {
+  background-color: #11433e;
+  color: white;
+}
+
+.bg_secondary, .btn_secondary {
+  background-color: #63B3ED;
+  color: black;
+}
+
+.bg_secondary-light, .btn_secondary-light {
+  background-color: #bee0f8;
+  color: black;
+}
+
+.bg_secondary-lighter, .btn_secondary-lighter {
+  background-color: white;
+  color: black;
+}
+
+.bg_secondary-dark, .btn_secondary-dark {
+  background-color: #1884d2;
+  color: black;
+}
+
+.bg_secondary-darker, .btn_secondary-darker {
+  background-color: #0e4a76;
+  color: white;
+}
+
+.btn_primary.active, .btn_primary:hover {
+  background-color: #31bcaf;
+  color: black;
+}
+
+.btn_primary-light.active, .btn_primary-light:hover {
+  background-color: #77dcd2;
+  color: black;
+}
+
+.btn_primary-lighter.active, .btn_primary-lighter:hover {
+  background-color: #c8f1ed;
+  color: black;
+}
+
+.btn_primary-dark.active, .btn_primary-dark:hover {
+  background-color: #1c6b64;
+  color: white;
+}
+
+.btn_primary-darker.active, .btn_primary-darker:hover {
+  background-color: #071a18;
+  color: white;
+}
+
+.btn_secondary.active, .btn_secondary:hover {
+  background-color: #359de8;
+  color: black;
+}
+
+.btn_secondary-light.active, .btn_secondary-light:hover {
+  background-color: #91c9f2;
+  color: black;
+}
+
+.btn_secondary-lighter.active, .btn_secondary-lighter:hover {
+  background-color: #d1e9fa;
+  color: black;
+}
+
+.btn_secondary-dark.active, .btn_secondary-dark:hover {
+  background-color: #1367a4;
+  color: white;
+}
+
+.btn_secondary-darker.active, .btn_secondary-darker:hover {
+  background-color: #082e49;
+  color: white;
+}
+
+/*# sourceMappingURL=colors.css.map */

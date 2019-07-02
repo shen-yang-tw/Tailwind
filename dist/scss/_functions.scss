@@ -41,17 +41,6 @@
   }
 }
 
-//Contrast
-@function text-contrast($bg-color) {
-  @if(lightness($bg-color) > 50) {
-    @return #000;
-  }
-
-  @else {
-    @return #fff;
-  }
-}
-
 //
 @function color($color, $type) {
   @if map-has-key($colors, $color) {

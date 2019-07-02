@@ -1,0 +1,104 @@
+@import 'functions', 'variables';
+
+#{$text-color-primary} {color:$color-primary-dark;}
+#{$text-color-secondary} {color:$color-secondary-dark;}
+#{$bg-primary} {
+  @include bg-color($bg-color:$color-primary);
+}
+#{$bg-primary-light} {
+  @include bg-color($bg-color:$color-primary-light);
+}
+#{$bg-primary-lighter} {
+  @include bg-color($bg-color:$color-primary-lighter);
+}
+#{$bg-primary-dark} {
+  @include bg-color($bg-color:$color-primary-dark);
+}
+#{$bg-primary-darker} {
+  @include bg-color($bg-color:$color-primary-darker);
+}
+#{$bg-secondary} {
+  @include bg-color($bg-color:$color-secondary);
+}
+#{$bg-secondary-light} {
+  @include bg-color($bg-color:$color-secondary-light);
+}
+#{$bg-secondary-lighter} {
+  @include bg-color($bg-color:$color-secondary-lighter);
+}
+#{$bg-secondary-dark} {
+  @include bg-color($bg-color:$color-secondary-dark);
+}
+#{$bg-secondary-darker} {
+  @include bg-color($bg-color:$color-secondary-darker);
+}
+#{$btn-primary} {
+  @extend #{$bg-primary};
+  &#{$active}, &:hover {
+    background-color:$color-primary-hover;
+    color:text-color($color-primary-hover);
+  }
+}
+#{$btn-primary-light} {
+  @extend #{$bg-primary-light};
+  &#{$active}, &:hover {
+    background-color:darken($color-primary-light, 10%);
+    color:text-color(darken($color-primary-light, 10%));
+  }
+}
+#{$btn-primary-lighter} {
+  @extend #{$bg-primary-lighter};
+  &#{$active}, &:hover {
+    background-color:darken($color-primary-lighter, 10%);
+    color:text-color(darken($color-primary-lighter, 10%));
+  }
+}
+#{$btn-primary-dark} {
+  @extend #{$bg-primary-dark};
+  &#{$active}, &:hover {
+    background-color:darken($color-primary-dark, 10%);
+    color:text-color(darken($color-primary-dark, 10%));
+  }
+}
+#{$btn-primary-darker} {
+  @extend #{$bg-primary-darker};
+  &#{$active}, &:hover {
+    background-color:darken($color-primary-darker, 10%);
+    color:text-color(darken($color-primary-darker, 10%));
+  }
+}
+#{$btn-secondary} {
+  @extend #{$bg-secondary};
+  &#{$active}, &:hover {
+    background-color:$color-secondary-hover;
+    color:text-color($color-secondary-hover);
+  }
+}
+#{$btn-secondary-light} {
+  @extend #{$bg-secondary-light};
+  &#{$active}, &:hover {
+    background-color:darken($color-secondary-light, 10%);
+    color:text-color(darken($color-secondary-light, 10%));
+  }
+}
+#{$btn-secondary-lighter} {
+  @extend #{$bg-secondary-lighter};
+  &#{$active}, &:hover {
+    background-color:darken($color-secondary-lighter, 10%);
+    color:text-color(darken($color-secondary-lighter, 10%));
+  }
+}
+#{$btn-secondary-dark} {
+  @extend #{$bg-secondary-dark};
+  &#{$active}, &:hover {
+    background-color:darken($color-secondary-dark, 10%);
+    color:text-color(darken($color-secondary-dark, 10%));
+  }
+}
+#{$btn-secondary-darker} {
+  @extend #{$bg-secondary-darker};
+  &#{$active}, &:hover {
+    background-color:darken($color-secondary-darker, 10%);
+    color:text-color(darken($color-secondary-darker, 10%));
+  }
+}
