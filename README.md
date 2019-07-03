@@ -57,6 +57,18 @@ Refer to https://docs.npmjs.com/files/package.json for guidance
 ```sass --watch dist/scss:dist/css```
 
 
+## Fix Tailwindcss (Added by Sheeny Yang-2019-7-3)
+* delete below code
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
 ## Tweaking
 * Customise the tailwind.config.js and tailwind.config.css to create the tailwind.css for your project
 * Use purgecss/cssnano to remove unused CSS and minify the final CSS file
