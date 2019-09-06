@@ -68,6 +68,9 @@ h6 {
   font-size: inherit;
   font-weight: inherit;
 }
+*::after {
+  border-style: solid;
+}
 
 ## Tweaking
 * Customise the tailwind.config.js and tailwind.config.css to create the tailwind.css for your project
