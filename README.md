@@ -58,7 +58,7 @@ Refer to https://docs.npmjs.com/files/package.json for guidance
 
 
 ## Fix Tailwindcss (Added by Sheeny Yang-2019-7-3)
-* delete below code
+* delete below code //?
 h1,
 h2,
 h3,
@@ -68,9 +68,25 @@ h6 {
   font-size: inherit;
   font-weight: inherit;
 }
+
+* modify below code //got problem below for uk-tab
+*,
+*::before,
 *::after {
+  border-width: 0;
   border-style: solid;
+  border-color: #e2e8f0;
 }
+
+* change to below
+*,
+*::before,
+*::after {
+  border-width: 0;
+  <!-- border-style: solid; -->
+  border-color: #e2e8f0;
+}
+
 
 ## Tweaking
 * Customise the tailwind.config.js and tailwind.config.css to create the tailwind.css for your project
