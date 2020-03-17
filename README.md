@@ -58,7 +58,7 @@ Refer to https://docs.npmjs.com/files/package.json for guidance
 
 
 ## Fix Tailwindcss (Added by Sheeny Yang-2019-7-3)
-* delete below code //?
+* delete below code //avoiding font size all the same as parent
 h1,
 h2,
 h3,
@@ -67,6 +67,21 @@ h5,
 h6 {
   font-size: inherit;
   font-weight: inherit;
+}
+
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+figure,
+p,
+pre {
+  margin: 0;
 }
 
 * modify below code //got problem below for uk-tab

@@ -388,7 +388,7 @@ html {
  * Removes the default spacing and border for appropriate elements.
  */
 
-blockquote,
+/* blockquote,
 dl,
 dd,
 h1,
@@ -401,7 +401,7 @@ figure,
 p,
 pre {
   margin: 0;
-}
+} */
 
 button {
   background: transparent;
@@ -465,6 +465,7 @@ html {
 *::before,
 *::after {
   border-width: 0;
+  /* border-style: solid; */
   border-color: #e2e8f0;
 }
 
@@ -525,7 +526,7 @@ table {
   border-collapse: collapse;
 }
 
-h1,
+/* h1,
 h2,
 h3,
 h4,
@@ -533,7 +534,7 @@ h5,
 h6 {
   font-size: inherit;
   font-weight: inherit;
-}
+} */
 
 /**
  * Reset links to optimize for opt-in styling instead of
@@ -7357,6 +7358,22 @@ video {
 }
 
 .invisible {
+  visibility: hidden !important;
+}
+
+.hover\:visible:hover {
+  visibility: visible !important;
+}
+
+.hover\:invisible:hover {
+  visibility: hidden !important;
+}
+
+.focus\:visible:focus {
+  visibility: visible !important;
+}
+
+.focus\:invisible:focus {
   visibility: hidden !important;
 }
 
@@ -14340,6 +14357,22 @@ video {
     visibility: hidden !important;
   }
 
+  .s\:hover\:visible:hover {
+    visibility: visible !important;
+  }
+
+  .s\:hover\:invisible:hover {
+    visibility: hidden !important;
+  }
+
+  .s\:focus\:visible:focus {
+    visibility: visible !important;
+  }
+
+  .s\:focus\:invisible:focus {
+    visibility: hidden !important;
+  }
+
   .s\:whitespace-normal {
     white-space: normal !important;
   }
@@ -21303,6 +21336,22 @@ video {
   }
 
   .m\:invisible {
+    visibility: hidden !important;
+  }
+
+  .m\:hover\:visible:hover {
+    visibility: visible !important;
+  }
+
+  .m\:hover\:invisible:hover {
+    visibility: hidden !important;
+  }
+
+  .m\:focus\:visible:focus {
+    visibility: visible !important;
+  }
+
+  .m\:focus\:invisible:focus {
     visibility: hidden !important;
   }
 
@@ -28272,6 +28321,22 @@ video {
     visibility: hidden !important;
   }
 
+  .l\:hover\:visible:hover {
+    visibility: visible !important;
+  }
+
+  .l\:hover\:invisible:hover {
+    visibility: hidden !important;
+  }
+
+  .l\:focus\:visible:focus {
+    visibility: visible !important;
+  }
+
+  .l\:focus\:invisible:focus {
+    visibility: hidden !important;
+  }
+
   .l\:whitespace-normal {
     white-space: normal !important;
   }
@@ -35235,6 +35300,22 @@ video {
   }
 
   .xl\:invisible {
+    visibility: hidden !important;
+  }
+
+  .xl\:hover\:visible:hover {
+    visibility: visible !important;
+  }
+
+  .xl\:hover\:invisible:hover {
+    visibility: hidden !important;
+  }
+
+  .xl\:focus\:visible:focus {
+    visibility: visible !important;
+  }
+
+  .xl\:focus\:invisible:focus {
     visibility: hidden !important;
   }
 
